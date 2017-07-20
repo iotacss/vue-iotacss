@@ -1,0 +1,44 @@
+/**
+ * Allows you to change the default type name from .o-type-.
+ * 
+ * Type: String
+ */
+
+$iota-objs-type-namespace: 'type-';
+
+
+/**
+ * Allows you to specify typography sizes.
+ *
+ * Type: Map
+ */
+
+$iota-objs-type-sizes: (
+  ms1: (
+    null: iota-ms(0),
+    sm  : iota-ms(1)
+  ),
+  ms2: (
+    null: iota-ms(1),
+    sm  : iota-ms(2)
+  ),
+  ms3: (
+    null: iota-ms(2),
+    sm  : iota-ms(3)
+  ),
+  ms4: (
+    null: iota-ms(3),
+    sm  : iota-ms(4)
+  ),
+  ms5: (
+    null: iota-ms(4),
+    sm  : iota-ms(5)
+  ),
+  ms6: (
+    null: iota-ms(5),
+    sm  : iota-ms(6)
+  )
+);
+
+
+@import 'node_modules/iotacss/objects/type';

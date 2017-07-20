@@ -1,0 +1,62 @@
+<template>
+  <Base tagName="button" class="c-button" :class="classes">
+    <slot></slot>
+  </Base>
+</template>
+
+<script>
+  import VueTypes from 'vue-types'
+  import { Base } from '../../lib'
+
+  export default {
+    props: VueTypes.string,
+    computed: {
+      classes() {
+        return {
+          [`c-button--${this.type}`]: this.type
+        }
+      }
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import '../scss/settings/baseline';
+  @import '../scss/settings/colors';
+
+
+  $button-color       : $color-blue;
+  $button-color-hover : darken($color-blue, 10%); 
+
+
+  .c-button {
+    padding: $baseline-x2 $baseline-x3;
+    display: inline-block;
+    font: inherit;
+    color: $color-white;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background-color: $button-color;
+    border-radius: 3px;
+  }
+
+  .c-button:hover { background-color: $button-color-hover }
+
+
+  .c-button--outline {
+    padding: ( $baseline-x2 - 2 ) ( $baseline-x3 - 2 );
+    color: #38B2FF;
+    border: 1px solid $button-color;
+    background-color: transparent;
+  }
+
+  .c-button--outline:hover {
+    color: #1893E0;
+    border-color: $button-color-hover;
+    background-color: transparent;
+  }
+</style>
